@@ -27,10 +27,10 @@ public class ReandomNumberServiceImpl implements RandomNumberService{
 
     @Override
     public RandomNumber getNumerById(int id) {
-        Optional optional = repository.findById(id);
+        Optional<RandomNumber> optional = repository.findById(id);
         RandomNumber randomNumber = null;
         if(optional.isPresent()) {
-            randomNumber = (RandomNumber)optional.get();  
+            randomNumber = optional.get();  
         }
         else {
             throw new RuntimeException(String.format("The number with id - %d was not found!", id));

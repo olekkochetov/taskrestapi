@@ -15,12 +15,12 @@ public class RandomController {
 	
 	@GetMapping("/")
 	public RandomNumber getRandomNumbers(@RequestParam(value="id", defaultValue= "1") int id) {
-			if(!randomNumberResources.containsKey(id)) {
-				randomNumberResources.put(id, new RandomNumber(id, rand.nextInt()));
-				return randomNumberResources.get(id);
-			}
-			else {
-				return randomNumberResources.get(id);
-			}
+		if(!randomNumberResources.containsKey(id)) {
+			randomNumberResources.put(id, new RandomNumber(id, rand.nextInt()));
+			return randomNumberResources.get(id);
+		}
+		else {
+			return randomNumberResources.get(id);
+		}
 	}
 }
