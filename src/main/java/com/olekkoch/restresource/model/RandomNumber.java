@@ -16,6 +16,7 @@ public class RandomNumber {
     @Column(name="random")
     private int random;
 
+    public RandomNumber (){}
     public RandomNumber(int id, int random) {
         this.id = id;
         this.random = random;

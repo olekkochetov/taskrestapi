@@ -3,11 +3,16 @@ package com.olekkoch.restresource.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.olekkoch.restresource.model.RandomNumber;
 import com.olekkoch.restresource.repository.RandomNumberRepository;
 
+@Service
 public class ReandomNumberServiceImpl implements RandomNumberService{
-
+	
+	@Autowired
     RandomNumberRepository repository;
 
     public ReandomNumberServiceImpl(RandomNumberRepository repository) {
