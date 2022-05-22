@@ -1,0 +1,6 @@
+#FileLock
+#Sun May 22 19:27:43 CEST 2022
+server=127.0.1.1\:43171
+hostName=phpDeb.local
+method=file
+id=180eccf81a2487ef1f5598828fc742aee1e86775b40
