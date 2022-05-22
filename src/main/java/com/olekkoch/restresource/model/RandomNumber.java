@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name="random_numbers")
 public class RandomNumber {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column(name="random")
     private int random;
