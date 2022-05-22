@@ -2,12 +2,20 @@ package com.olekkoch.restresource.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.olekkoch.restresource.model.RandomNumber;
 import com.olekkoch.restresource.repository.RandomNumberRepository;
 
+@Service
 public class ReandomNumberServiceImpl implements RandomNumberService{
-
+	
+	private Random rand = new Random();
+	
+	@Autowired
     RandomNumberRepository repository;
 
     public ReandomNumberServiceImpl(RandomNumberRepository repository) {
@@ -27,13 +35,15 @@ public class ReandomNumberServiceImpl implements RandomNumberService{
 
     @Override
     public RandomNumber getNumerById(int id) {
+    	RandomNumber randomNumber;
         Optional<RandomNumber> optional = repository.findById(id);
-        RandomNumber randomNumber = null;
+        
         if(optional.isPresent()) {
             randomNumber = optional.get();  
         }
         else {
-            throw new RuntimeException(String.format("The number with id - %d was not found!", id));
+        	randomNumber = new RandomNumber(id, rand.nextInt());
+        	repository.save(randomNumber);
         }
         return randomNumber;
     }

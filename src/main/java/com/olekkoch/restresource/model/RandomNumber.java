@@ -11,11 +11,10 @@ import javax.persistence.Table;
 @Table(name="random_numbers")
 public class RandomNumber {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name="random")
     private int random;
 
+    public RandomNumber (){}
     public RandomNumber(int id, int random) {
         this.id = id;
         this.random = random;
