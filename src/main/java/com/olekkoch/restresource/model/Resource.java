@@ -9,13 +9,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="random_numbers")
-public class RandomNumber {
+public class Resource {
     @Id
     private int id;
     private int random;
 
-    public RandomNumber (){}
-    public RandomNumber(int id, int random) {
+    public Resource (){}
+    public Resource(int id, int random) {
         this.id = id;
         this.random = random;
     }

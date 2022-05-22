@@ -3,8 +3,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
-import com.olekkoch.restresource.model.RandomNumber;
-import com.olekkoch.restresource.service.RandomNumberService;
+import com.olekkoch.restresource.model.Resource;
+import com.olekkoch.restresource.service.ResourceService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class RandomController {
+public class ResourceController {
 //    private HashMap<Integer, RandomNumber> randomNumberResources = new HashMap<>();
 	
 	@Autowired
-	private RandomNumberService randomNumberService;
+	private ResourceService resourceService;
 	
 	@GetMapping("/")
-    public List<RandomNumber> getRandomNumbers() {
-		return randomNumberService.getAllNumbers();
+    public List<Resource> getResources() {
+		return resourceService.getAllResources();
 	}
 	
 	@GetMapping("/{id}")
-	public RandomNumber getRandomNumberById(@PathVariable(value="id") int id) {
-		RandomNumber randomNumber = randomNumberService.getNumerById(id);
+	public Resource getResourceById(@PathVariable(value="id") int id) {
+		Resource resource = resourceService.getResourceById(id);
 //		randomNumberService.saveNewResource(randomNumber);
-		return randomNumber;
+		return resource;
 	}
 }
