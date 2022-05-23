@@ -4,6 +4,5 @@ import java.util.List;
 
 public interface RandomNumberService {
     List<RandomNumber> getAllNumbers();
-    void saveNewResource(RandomNumber number);    
     RandomNumber getNumerById(int id);
 }

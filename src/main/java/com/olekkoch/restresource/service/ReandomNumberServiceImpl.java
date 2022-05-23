@@ -29,11 +29,6 @@ public class ReandomNumberServiceImpl implements RandomNumberService{
     }
 
     @Override
-    public void saveNewResource(RandomNumber numb) {
-        repository.save(numb);
-    }
-
-    @Override
     public RandomNumber getNumerById(int id) {
     	RandomNumber randomNumber;
         Optional<RandomNumber> optional = repository.findById(id);
