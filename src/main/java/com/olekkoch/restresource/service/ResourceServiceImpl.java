@@ -16,7 +16,7 @@ public class ResourceServiceImpl implements ResourceService{
 	private Random rand = new Random();
 	
 	@Autowired
-    ResourceRepository repository;
+    private ResourceRepository repository;
 
     public ResourceServiceImpl(ResourceRepository repository) {
         super();

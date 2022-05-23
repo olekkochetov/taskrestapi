@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ResourceController {
-//    private HashMap<Integer, RandomNumber> randomNumberResources = new HashMap<>();
 	
 	@Autowired
 	private ResourceService resourceService;
@@ -27,7 +26,6 @@ public class ResourceController {
 	@GetMapping("/{id}")
 	public Resource getResourceById(@PathVariable(value="id") int id) {
 		Resource resource = resourceService.getResourceById(id);
-//		randomNumberService.saveNewResource(randomNumber);
 		return resource;
 	}
 }
