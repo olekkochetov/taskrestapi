@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.olekkoch.restresource.model.RandomNumber;
@@ -15,7 +14,6 @@ public class ReandomNumberServiceImpl implements RandomNumberService{
 	
 	private Random rand = new Random();
 	
-	@Autowired
     RandomNumberRepository repository;
 
     public ReandomNumberServiceImpl(RandomNumberRepository repository) {
