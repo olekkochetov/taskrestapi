@@ -10,13 +10,13 @@ import com.olekkoch.restresource.model.RandomNumber;
 import com.olekkoch.restresource.repository.RandomNumberRepository;
 
 @Service
-public class ReandomNumberServiceImpl implements RandomNumberService{
+public class RandomNumberServiceImpl implements RandomNumberService{
 	
 	private Random rand = new Random();
 	
     RandomNumberRepository repository;
 
-    public ReandomNumberServiceImpl(RandomNumberRepository repository) {
+    public RandomNumberServiceImpl(RandomNumberRepository repository) {
         super();
         this.repository = repository;
     }
